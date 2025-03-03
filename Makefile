@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Iinclude
+CXXFLAGS = -std=c++17 -Iinclude -Wall
 LDFLAGS = -lgtest -lgtest_main -pthread -lexpat
 
 SRC_DIR = src
@@ -21,12 +21,15 @@ $(GTEST_TARGET): $(OBJ_FILES) $(TEST_OBJ_FILES)
 	@mkdir -p $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
+# Rule for compiling source files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/%.o: $(TEST_DIR)/%.cpp | $(OBJ_DIR)
+# Rule for compiling test files
+$(OBJ_DIR)/test_%.o: $(TEST_DIR)/%.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Ensure object directory exists
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
