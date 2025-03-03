@@ -139,7 +139,7 @@ std::size_t CCSVBusSystem::StopCount() const noexcept {
     // Get the size of the stop list
     std::size_t count = DImplementation->SList.size();
     // Print stop count
-    std::cout << "\n"; 
+    std::cout << "StopCount: " << count << "\n"; 
     return count;
 }
 
@@ -149,7 +149,7 @@ std::size_t CCSVBusSystem::RouteCount() const noexcept {
     // Get the size of the route list
     std::size_t count = DImplementation->RList.size();
     // Print route count
-    std::cout << "\n"; 
+    std::cout << "RouteCount: " << count << "\n";
     return count;
 }
 
