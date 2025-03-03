@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Iinclude -Wall
+CXXFLAGS = -std=c++17 -Iinclude -Wall -Wextra -g
 LDFLAGS = -lgtest -lgtest_main -pthread -lexpat
 
 SRC_DIR = src
@@ -11,7 +11,7 @@ SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 TEST_FILES = $(wildcard $(TEST_DIR)/*.cpp)
 
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
-TEST_OBJ_FILES = $(patsubst $(TEST_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(TEST_FILES))
+TEST_OBJ_FILES = $(patsubst $(TEST_DIR)/%.cpp,$(OBJ_DIR)/test_%.o,$(TEST_FILES))
 
 GTEST_TARGET = $(BIN_DIR)/runtests
 
