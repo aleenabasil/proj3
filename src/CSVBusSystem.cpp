@@ -163,7 +163,8 @@ std::shared_ptr<CBusSystem::SStop> CCSVBusSystem::StopByIndex(std::size_t index)
         auto stop = DImplementation->SList[index];
         // Print debug information about the stop
         std::cout << "Stop" << index << "Index: " << index << "\n";
-        std::cout << "Stop" << index << "Index StopID: " << stop->ID() << "\n";
+        std::cout << "Index " << index << " IsSameInstance: " << (stop ? 1 : 0) << "\n";
+
         return stop;
     }
     // Return nullptr if index is out of bounds
@@ -193,9 +194,7 @@ std::shared_ptr<CBusSystem::SRoute> CCSVBusSystem::RouteByIndex(std::size_t inde
         // Retrieve the route at the given index
         auto route = DImplementation->RList[index];
         // Print debug information about the route
-        std::cout << "Route" << index << "Index: " << index << "\n";
-        std::cout << "Route" << index << "Index Name: " << route->Name() << "\n";
-
+        std::cout << "Route Index " << index << " IsSameInstance: " << (route ? 1 : 0) << "\n";
         return route;
     }
     // Return nullptr if index is out of bounds
