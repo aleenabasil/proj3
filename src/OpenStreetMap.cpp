@@ -1,10 +1,11 @@
 #include "OpenStreetMap.h"
-#include <memory>
-#include <cstddef>
-#include <vector>
-#include <unordered_map>
-#include <string>
-#include <iostream>
+#include <memory>         
+#include <vector>          
+#include <string>          
+#include <unordered_map>  
+#include <iostream> 
+#include "DSVReader.h"  
+#include "XMLReader.h"
 
 // Define the implementation structure for COpenStreetMap
 struct COpenStreetMap::SImplementation {
