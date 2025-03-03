@@ -131,9 +131,3 @@ std::shared_ptr<CStreetMap::SWay> COpenStreetMap::WayByID(TWayID id) const noexc
     for (auto& way : DImplementation->Ways) if (way->ID() == id) return way;
     return nullptr;
 }
-
-std::shared_ptr<CStreetMap::SWay> COpenStreetMap::WayByIndex(std::size_t index) const noexcept { return (index < DImplementation->Ways.size()) ? DImplementation->Ways[index] : nullptr; }
-std::shared_ptr<CStreetMap::SWay> COpenStreetMap::WayByID(TWayID id) const noexcept {
-    for (auto& way : DImplementation->Ways) if (way->ID() == id) return way;
-    return nullptr;
-}
