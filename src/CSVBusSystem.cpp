@@ -5,6 +5,7 @@
 #include <iostream> 
 #include "CSVBusSystem.h" 
 #include "DSVReader.h"    
+#include "XMLReader.h"
 
 // Class for stop structure
 class CCSVBusSystem::SStop : public CBusSystem::SStop {
