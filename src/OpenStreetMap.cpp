@@ -277,5 +277,5 @@ std::shared_ptr<CStreetMap::SWay> COpenStreetMap::WayByID(TWayID id) const noexc
             return way;
         }
     }
-    return nullptr;
+    return nullptr; 
 }
